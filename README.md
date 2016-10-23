@@ -9,9 +9,21 @@ El semáforo permanecerá en rojo 10 segundos, a continuación pasará a ámbar 
 
 La entrega consistirá en una carpeta comprimida que contenga el código fuente y un informe explicando el patrón utilizado, por qué considera que es ese el patrón que debe utilizar, explicación de como se ha diseñado la práctica de manera que permita a otros desarrolladores entenderla con facilidad y el diagrama UML de dicha práctica.
 
-<UL> Rúbrica:
+### Rúbrica:
 
 * Utiliza correctamente el/los patrones adecuados. 5 ptos
 * Diseña interfaz. 2 ptos.
 * Cambio de estado en el contexto 2 ptos
 * Informe con todo lo solicitado 1 pto.
+
+## Patrón Estado
+* **Clasificación:** Comportamiento de Objetos
+* **Intención:** Alterar el comportamiento de un objeto según el estado interno en que se encuentre.
+* **Participantes:**
+  * Contexto: 
+      * Define la interfaz de interés para los clientes.
+      * Mantiene una instancia de una subclase de EstadoConcreto que define el estado actual.
+  * Estado:
+      * Define una interfaz para encapsular el comportamiento asociado con un determinado estado del contexto.
+  * Subclases EstadoConcreto:
+      * Cada suclase implementa su comportamiento asociado con un estado del contexto.
