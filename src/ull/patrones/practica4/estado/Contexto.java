@@ -1,5 +1,7 @@
 package ull.patrones.practica4.estado;
 
+import java.awt.Color;
+
 public class Contexto
 {
 	private ISemaforoEstado m_semaforo;
@@ -10,6 +12,10 @@ public class Contexto
 	public void cambiarEstado()
 	{
 		m_semaforo = m_semaforo.cambiarEstado();
+	}
+	public Color color()
+	{
+		return m_semaforo.getColor();
 	}
 	public void estadoActual()
 	{

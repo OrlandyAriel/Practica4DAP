@@ -1,8 +1,9 @@
 package ull.patrones.practica4.estado;
 
+import java.awt.Color;
+
 public class SemaforoEnAmbar implements ISemaforoEstado
 {
-	
 	@Override
 	public ISemaforoEstado cambiarEstado()
 	{
@@ -17,5 +18,10 @@ public class SemaforoEnAmbar implements ISemaforoEstado
 	public ISemaforoEstado cambiarEstado(ISemaforoEstado a_estadoSiguiente)
 	{
 		return a_estadoSiguiente;
+	}
+	@Override
+	public Color getColor()
+	{
+		return new Color(255, 126, 0);
 	}
 }
