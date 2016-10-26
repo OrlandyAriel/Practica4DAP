@@ -1,6 +1,8 @@
-package ull.patrones.practica4.estado.p;
+package ull.patrones.practica4.estado;
 
 import java.awt.Color;
+
+import ull.patrones.practica4.iu.FrameSemaforo;
 
 public class SemaforoVerde implements IEstadoSemaforo
 {
@@ -9,7 +11,7 @@ public class SemaforoVerde implements IEstadoSemaforo
 	private Color m_colorParpadeo;
 	public  SemaforoVerde()
 	{
-		m_tiempo = 1000;
+		m_tiempo = 7000;
 		m_color = new Color(0, 169, 62);
 		m_colorParpadeo = new Color(0,53,19);
 	}

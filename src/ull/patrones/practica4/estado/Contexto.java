@@ -2,24 +2,32 @@ package ull.patrones.practica4.estado;
 
 import java.awt.Color;
 
+import ull.patrones.practica4.iu.FrameSemaforo;
+
 public class Contexto
 {
-	private ISemaforoEstado m_semaforo;
-	public Contexto(ISemaforoEstado a_estadoInicial)
+	public static void main(String[] args)
 	{
-		m_semaforo = a_estadoInicial;
+		new FrameSemaforo();
+		// Contexto a = new Contexto(new SemaforoRojo());
+		// a.cambiarEstado();
 	}
-	public void cambiarEstado()
+
+	private IEstadoSemaforo m_semaforo;
+
+	public Contexto(IEstadoSemaforo a_semaforo)
 	{
-		m_semaforo = m_semaforo.cambiarEstado();
-		m_semaforo.run();
+		m_semaforo = a_semaforo;
 	}
+
 	public Color colorEstado()
 	{
 		return m_semaforo.getColor();
 	}
-	public void estadoActual()
+	public void ejecucion()
 	{
-		System.out.println(m_semaforo);
+		m_semaforo.encender();
+		m_semaforo = m_semaforo.apagar();
+
 	}
 }

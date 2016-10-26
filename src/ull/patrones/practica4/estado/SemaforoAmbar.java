@@ -1,4 +1,4 @@
-package ull.patrones.practica4.estado.p;
+package ull.patrones.practica4.estado;
 
 import java.awt.Color;
 
