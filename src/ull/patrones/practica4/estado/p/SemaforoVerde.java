@@ -6,17 +6,18 @@ public class SemaforoVerde implements IEstadoSemaforo
 {
 	private long m_tiempo;
 	private Color m_color;
+	private Color m_colorParpadeo;
 	public  SemaforoVerde()
 	{
 		m_tiempo = 1000;
-		m_color = Color.GREEN;
+		m_color = new Color(0, 169, 62);
+		m_colorParpadeo = new Color(0,53,19);
 	}
 	@Override
 	public Color getColor()
 	{
 		return m_color;
 	}
-
 	@Override
 	public IEstadoSemaforo apagar()
 	{
@@ -26,14 +27,14 @@ public class SemaforoVerde implements IEstadoSemaforo
 	public void encender()
 	{
 		run();
-		m_tiempo = 100;
+		
 		for (int i = 0; i < 3; i++)
-		{
-			m_color = Color.BLACK;
-			System.out.println("negro");
+		{ 
+			m_tiempo = 500;
+			FrameSemaforo.cambiarColor(m_colorParpadeo);
 			run();
-			m_color = Color.GREEN;
-			m_tiempo = 100;
+			m_tiempo = 200;
+			FrameSemaforo.cambiarColor(m_color);
 			run();
 		}
 	}

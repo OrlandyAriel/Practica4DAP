@@ -51,4 +51,11 @@ public class FrameSemaforo extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		add(m_scrollPanelSemaforo);
 	}
+
+	public static void cambiarColor(Color a_color)
+	{
+		m_ColorSaforo.cambiarColor(a_color);
+		m_scrollPanelSemaforo.repaint();
+		m_scrollPanelSemaforo.add(m_ColorSaforo);
+	}
 }

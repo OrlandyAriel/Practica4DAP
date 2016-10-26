@@ -1,6 +1,6 @@
 package ull.patrones.practica4;
 
-import ull.patrones.practica4.iu.FrameSemaforo;
+import ull.patrones.practica4.estado.p.FrameSemaforo;
 
 /**
  * @author Orlandy Ariel Sánchez A.

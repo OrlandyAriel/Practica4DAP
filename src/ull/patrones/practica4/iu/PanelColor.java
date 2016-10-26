@@ -10,7 +10,7 @@ import java.awt.geom.Ellipse2D;
 
 import javax.swing.JPanel;
 
-public class PanelColor extends JPanel implements Runnable
+public class PanelColor extends JPanel
 {
 	private Color m_color;
 	private Ellipse2D mCirculo;
@@ -19,7 +19,6 @@ public class PanelColor extends JPanel implements Runnable
 		a_color = m_color;
 		initComponent();
 	}
-
 	private void initComponent()
 	{
 		setVisible(true);
@@ -42,17 +41,5 @@ public class PanelColor extends JPanel implements Runnable
 		g2.fill(mCirculo);
 		g2.setColor(m_color);
 		g2.draw(mCirculo);
-	}
-	@Override
-	public void run()
-	{
-		try
-		{
-			Thread.sleep(1);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
-		repaint();
 	}
 }

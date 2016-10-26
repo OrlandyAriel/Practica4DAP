@@ -7,14 +7,13 @@ import java.awt.ScrollPane;
 import javax.swing.JFrame;
 
 import ull.patrones.practica4.estado.p.Contexto;
-import ull.patrones.practica4.estado.p.SemaforoRojo;
 import ull.patrones.practica4.estado.p.SemaforoVerde;
 
 public class FrameSemaforo extends JFrame
 {
-	private PanelColor m_ColorSaforo;
+	private static PanelColor m_ColorSaforo;
 	private Contexto m_contexto;
-	private ScrollPane m_scrollPanelSemaforo;
+	private static ScrollPane m_scrollPanelSemaforo;
 
 	public FrameSemaforo()
 	{
@@ -26,27 +25,27 @@ public class FrameSemaforo extends JFrame
 	private void cambiaPanel()
 	{
 		m_contexto = new Contexto(new SemaforoVerde());
-
 		while (true)
 		{
 			m_scrollPanelSemaforo.add(m_ColorSaforo);
-
 			m_ColorSaforo.cambiarColor(m_contexto.colorEstado());
 			m_contexto.ejecucion();
-			m_scrollPanelSemaforo.add(m_ColorSaforo);
-			m_scrollPanelSemaforo.repaint();
-
-			m_ColorSaforo.run();
+			cambiarColor(m_contexto.colorEstado());
+			
 		}
 	}
-
+	public static void cambiarColor(Color a_color)
+	{
+		m_ColorSaforo.cambiarColor(a_color);
+		m_scrollPanelSemaforo.repaint();
+		m_scrollPanelSemaforo.add(m_ColorSaforo);
+	}
 	private void panelColor()
 	{
 		m_scrollPanelSemaforo = new ScrollPane();
 		m_scrollPanelSemaforo.setPreferredSize(new Dimension(30, 30));
 		m_ColorSaforo = new PanelColor(Color.white);
 	}
-
 	private void initComponent()
 	{
 		setTitle("Ventana principal");
