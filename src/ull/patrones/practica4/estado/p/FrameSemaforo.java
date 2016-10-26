@@ -1,4 +1,4 @@
-package ull.patrones.practica4.iu;
+package ull.patrones.practica4.estado.p;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -6,15 +6,13 @@ import java.awt.ScrollPane;
 
 import javax.swing.JFrame;
 
-import ull.patrones.practica4.estado.p.Contexto;
-import ull.patrones.practica4.estado.p.SemaforoRojo;
-import ull.patrones.practica4.estado.p.SemaforoVerde;
+import ull.patrones.practica4.iu.PanelColor;
 
 public class FrameSemaforo extends JFrame
 {
-	private PanelColor m_ColorSaforo;
+	public static PanelColor m_ColorSaforo;
 	private Contexto m_contexto;
-	private ScrollPane m_scrollPanelSemaforo;
+	public static ScrollPane m_scrollPanelSemaforo;
 
 	public FrameSemaforo()
 	{
@@ -26,17 +24,14 @@ public class FrameSemaforo extends JFrame
 	private void cambiaPanel()
 	{
 		m_contexto = new Contexto(new SemaforoVerde());
-
+		m_scrollPanelSemaforo.add(m_ColorSaforo);
 		while (true)
 		{
-			m_scrollPanelSemaforo.add(m_ColorSaforo);
-
 			m_ColorSaforo.cambiarColor(m_contexto.colorEstado());
 			m_contexto.ejecucion();
 			m_scrollPanelSemaforo.add(m_ColorSaforo);
 			m_scrollPanelSemaforo.repaint();
-
-			m_ColorSaforo.run();
+		
 		}
 	}
 

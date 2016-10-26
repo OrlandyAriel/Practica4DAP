@@ -48,7 +48,7 @@ public class PanelColor extends JPanel implements Runnable
 	{
 		try
 		{
-			Thread.sleep(1500);
+			Thread.sleep(1);
 		} catch (InterruptedException e)
 		{
 			e.printStackTrace();

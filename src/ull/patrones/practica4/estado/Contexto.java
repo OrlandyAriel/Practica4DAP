@@ -12,8 +12,9 @@ public class Contexto
 	public void cambiarEstado()
 	{
 		m_semaforo = m_semaforo.cambiarEstado();
+		m_semaforo.run();
 	}
-	public Color color()
+	public Color colorEstado()
 	{
 		return m_semaforo.getColor();
 	}

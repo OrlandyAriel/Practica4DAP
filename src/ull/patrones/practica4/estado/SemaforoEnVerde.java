@@ -24,4 +24,10 @@ public class SemaforoEnVerde implements ISemaforoEstado
 	{
 		return Color.GREEN;
 	}
+	@Override
+	public void run()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -4,6 +4,9 @@ import java.awt.Color;
 
 public class SemaforoEnRojo implements ISemaforoEstado
 {
+	public SemaforoEnRojo()
+	{
+	}
 	@Override
 	public ISemaforoEstado cambiarEstado()
 	{
@@ -23,6 +26,19 @@ public class SemaforoEnRojo implements ISemaforoEstado
 	public Color getColor()
 	{
 		return Color.RED;
+	}
+	@Override
+	public void run()
+	{
+		try
+		{
+			Thread.sleep(25500);
+			System.out.println("hooasdf");
+		} catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+		
 	}
 
 }

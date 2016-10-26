@@ -24,4 +24,9 @@ public class SemaforoEnAmbar implements ISemaforoEstado
 	{
 		return new Color(255, 126, 0);
 	}
+	@Override
+	public void run()
+	{
+		
+	}
 }
