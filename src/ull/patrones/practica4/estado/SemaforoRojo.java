@@ -2,8 +2,15 @@ package ull.patrones.practica4.estado;
 
 import java.awt.Color;
 
+import ull.patrones.practica4.sonido.Sonido;
+
 public class SemaforoRojo implements IEstadoSemaforo
 {
+	private Sonido m_sonido;
+	public SemaforoRojo()
+	{
+		m_sonido = new Sonido("sonidoRojo.wav");
+	}
 	@Override
 	public Color getColor()
 	{
@@ -13,13 +20,14 @@ public class SemaforoRojo implements IEstadoSemaforo
 	@Override
 	public IEstadoSemaforo apagar()
 	{
+		m_sonido.detenerSonido();
 		return new SemaforoVerde();
 	}
 
 	@Override
 	public void encender()
 	{
-		getColor();
+		m_sonido.reproducir();
 		run();
 	}
 

@@ -28,14 +28,16 @@ public class FrameSemaforo extends JFrame
 		m_scrollPanelSemaforo.add(m_ColorSaforo);
 		while (true)
 		{
-			m_ColorSaforo.cambiarColor(m_contexto.colorEstado());
+			m_ColorSaforo.setColor(m_contexto.colorEstado());
+			
 			m_contexto.ejecucion();
 			m_scrollPanelSemaforo.add(m_ColorSaforo);
 			m_scrollPanelSemaforo.repaint();
-		
 		}
 	}
-
+	/**
+	 * Inicializa los valores del panel
+	 */
 	private void panelColor()
 	{
 		m_scrollPanelSemaforo = new ScrollPane();
@@ -52,10 +54,13 @@ public class FrameSemaforo extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		add(m_scrollPanelSemaforo);
 	}
-
+	/**
+	 * Método para cambiar el color según el estado
+	 * @param a_color
+	 */
 	public static void cambiarColor(Color a_color)
 	{
-		m_ColorSaforo.cambiarColor(a_color);
+		m_ColorSaforo.setColor(a_color);
 		m_scrollPanelSemaforo.repaint();
 		m_scrollPanelSemaforo.add(m_ColorSaforo);
 	}

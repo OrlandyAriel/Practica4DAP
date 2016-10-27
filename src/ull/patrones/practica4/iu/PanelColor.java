@@ -9,7 +9,11 @@ import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.JPanel;
-
+/**
+ * @author Orlandy Ariel Sánchez A.
+ * Clase que dibuja un circulo para rellenarlo con el color del estado
+ * del semarofo
+ */
 public class PanelColor extends JPanel
 {
 	private Color m_color;
@@ -25,7 +29,7 @@ public class PanelColor extends JPanel
 		setPreferredSize(new Dimension(30, 30));
 		setLayout(new BorderLayout());
 	}
-	public void cambiarColor(Color a_color)
+	public void setColor(Color a_color)
 	{
 		m_color = a_color;
 		repaint();
